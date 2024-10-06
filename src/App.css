@@ -1,38 +1,114 @@
+/* General App styling */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Make sidebar and main content side by side */
+  height: 100vh; /* Full viewport height */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* sidebar.css */
+.sidebar {
+  width: 250px;
+  background-color: #2c3e50;
+  height: 100vh;
+  padding-top: 20px;
+  position: fixed;
+}
+
+.sidebar-header {
+  color: #ecf0f1;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.menu-item {
+  display: block;
+  padding: 15px;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: #ecf0f1;
+  display: flex;
   align-items: center;
+  transition: 0.3s ease;
+}
+
+.menu-item a:hover {
+  background-color: #34495e;
+  padding-left: 30px;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.menu-text {
+  font-size: 18px;
+}
+
+
+.main-content {
+  flex-grow: 1;
+  margin-left: 250px; /* Matches the sidebar width */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Enable scrolling in the main content */
+}
+
+/* Header styling */
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Error message styling */
+.error {
+  color: red;
+  font-size: 16px;
+}
+
+/* Movie List Styling */
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Movie Card Styling */
+.movie {
+  margin: 15px;
+  width: 200px;
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Hover effect for movies */
+.movie:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.movie h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.movie p {
+  font-size: 14px;
+  color: #555;
 }
